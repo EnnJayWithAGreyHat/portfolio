@@ -1,0 +1,20 @@
+.testDiv{
+    --i:0;
+    &:active{
+        --i:1;
+    }
+
+
+}
+
+.testDiv > input{
+    color:rgb(196, 13, 126);
+}
+
+
+/* I DID A THING*/
+output{
+    transform: scale(calc(var(--i)));
+    color:rgba(0, 255, 0, var(--i));
+    transition: transform 0.5s, color 0.5s;
+}
