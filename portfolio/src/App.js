@@ -2,6 +2,7 @@
 //5 / 21 / 2024
 //Purpose: Learning React through practice and developing based on a tutorial on scrimba
 import './App.css';
+import './App.scss'
 import ReactDOM from 'react-dom/client';
 import React from 'react';
 import Intro from './components/Intro';
