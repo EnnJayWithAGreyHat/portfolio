@@ -1,6 +1,7 @@
 .nav-bar {
     background: #181818;
     width: 60px;
+    min-width: none;
     height: 100%;
     position: absolute;
     top: 0;
@@ -16,10 +17,6 @@
         margin: 8px auto;
         width: 24px;
         height: auto;
-  
-        &.sub-logo {
-          width: 50px;
-        }
       }
     }
   

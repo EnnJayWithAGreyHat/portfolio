@@ -7,6 +7,7 @@ import About from './components/About'
 import Contact from './components/Contact'
 import Layout from './components/Layout'
 import './App.scss'
+import Portfolio from './components/Portfolio'
 //query selector would also work since you are essentially creating a root,
 //and then rendering to that using an element that is written in the html code below
 //"element" is what I want to render, and "root" is where I want to do it (<h1> is for header, <p> is for paragraph)
@@ -28,6 +29,7 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<Layout />}>
+        <Route path='/portfolio' index element={<Portfolio />} />
           <Route path='/home' index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
