@@ -1,12 +1,11 @@
 .nav-bar {
     background: #181818;
-    width: 60px;
-    min-width: none;
+    width: 5%;
+    float: left;
     height: 100%;
     position: absolute;
-    top: 0;
     z-index: 3;
-    min-height: 500px;
+    //min-height: 500px;
   
     .logo {
       display: block;
@@ -126,10 +125,6 @@
         }
       }
     }
-  }
-  
-  .hamburger-icon, .close-icon {
-    display: none;
   }
   
   

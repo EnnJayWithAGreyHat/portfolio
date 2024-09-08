@@ -1,0 +1,40 @@
+.title1{
+    position: absolute;
+    left: 30%;  
+    color: #8C1D40;
+      user-select: none;
+      font-size: 56px;
+      line-height: 53px;
+      margin: 0;
+      font-family: 'Coolvetica';
+      font-weight: 400;
+}
+
+
+.listInputs{
+  position:absolute;
+  left: 20%;
+  top: 20%;
+}
+.elements{
+  .delButton{
+    box-sizing: border-box;
+    border-radius: 10px;
+    position: relative;
+    width:max-content;
+    left: 3%;
+  }
+  position:absolute;
+  left: 20%;
+  top: 30%;
+  min-width: 20%;
+  max-width: 100%;
+  float:  left;
+  clear: left;
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.nameList{
+  padding:1%;
+}

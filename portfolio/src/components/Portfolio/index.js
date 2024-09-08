@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { v4 as uuidv4 } from "uuid";
 import { React, createContext, useContext} from "react";
+import './index.scss';
 //import Datalist from "./Datalist";
 const Context = createContext(null);
 const Portfolio = () => {
@@ -15,11 +16,12 @@ const handleDelete = (e) => {
 }
 
     return (
-        <div>
+        <div className="container portfolio">
+		<h1 className="title1">Learning:</h1>
         <Context.Provider value={{ GlobalState, SetGlobalState }}>
             <nav className="body">
                 <Helper />
-                <ul>{GlobalState.map((inValue) => (
+                <ul className="elements">{GlobalState.map((inValue) => (
                     <li key={inValue.setkey} className="nameList">First name: {inValue.firstname} Last Name: {inValue.lastname}
                         <button id={inValue.setkey} className="delButton" onClick={handleDelete}>DELETE</button>
                     </li>
@@ -94,9 +96,9 @@ function Helper() {
 
 	return (
 		//this is the JSX part where I have the input areas to input the first and last name for the list
-		<div>
+		<div className="listInputs">
 			<nav className="HelpNav">
-				<form>
+				<form className="movable1">
 					<input placeholder="Enter your first name" id="first" type="text" value={FormState.firstname} onChange={(e) => handleFirstChange(e)} />
 					<input placeholder="Enter your last name" id="last" type="text" value={FormState.lastname} onChange={(e) => handleLastChange(e)} />
 				</form>

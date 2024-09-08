@@ -20,13 +20,6 @@ const Home = () => {
   return (
     <>
       <div className="container home-page">
-        <div className="projects">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDBfQGwaEWjP3eiMUMFbW6dTHuGJVMMiCdjw&s" alt='Erm wrong link' className='para'>
-          </img>
-          <p className='yap'>I write python in (libraries) for Paragon, and we are working to build drones to detect and relinquish fires
-            in high risk areas before they damage large populations. Locations such as Arizona, California, Hawaii and others.
-          </p>
-        </div>
         <div className="text-zone">
           <h1>
             <span className={letterClass}>Hello</span>
