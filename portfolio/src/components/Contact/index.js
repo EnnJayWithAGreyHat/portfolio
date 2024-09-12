@@ -19,7 +19,9 @@ const Contact = () => {
     e.preventDefault()
 
     emailjs
-      .sendForm('service_9oz5clb', 'template_i0mlhid', form.current, 'y7Rc7kVWbzS0DUK45')
+      .sendForm('service_9oz5clb', 'template_i0mlhid', form.current, {
+        publicKey: 'y7Rc7kVWbzS0DUK45',
+      })
       .then(
         () => {
           alert('Message successfully sent!')
@@ -44,27 +46,19 @@ const Contact = () => {
           </h1>
           <p>
             I am always willing to start a conversation! Feel free to reach out through my LinkedIn or send me a personal email that would not
-            get lost through the feed of job updates and school notifications!
+            get lost through the feed of job updates and school notifications! (This service utilizes EmailJS to send me a free email on your behalf!)
           </p>
           <div className="contact-form">
             <form ref={form} onSubmit={sendEmail}>
               <ul>
                 <li className="half">
-                  <input placeholder="Name" type="text" name="name" required />
+                  <input placeholder="Name" type="text" name="from_name" required />
                 </li>
                 <li className="half">
                   <input
                     placeholder="Email"
                     type="email"
-                    name="email"
-                    required
-                  />
-                </li>
-                <li>
-                  <input
-                    placeholder="Subject"
-                    type="text"
-                    name="subject"
+                    name="from_email"
                     required
                   />
                 </li>

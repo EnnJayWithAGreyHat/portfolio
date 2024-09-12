@@ -2,13 +2,15 @@ import { useEffect, useState } from "react"
 import { v4 as uuidv4 } from "uuid";
 import { React, createContext, useContext} from "react";
 import './index.scss';
+import {faKaggle} from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 //import Datalist from "./Datalist";
 const Context = createContext(null);
 const Portfolio = () => {
 const [GlobalState, SetGlobalState] = useState([]);
+const nameArray = ['L','e','a','r','n','i','n', 'g']
 useEffect(() => { console.log(GlobalState) }, [GlobalState])
 const handleDelete = (e) => {
-
     const TheKey = e.target.id;
     const tempstate = [...GlobalState];
     const tempstate2 = tempstate.filter(value => value.setkey !== TheKey);
@@ -17,7 +19,20 @@ const handleDelete = (e) => {
 
     return (
         <div className="container portfolio">
-		<h1 className="title1">Learning:</h1>
+		<h1 className="title1">
+			<p className="letter1 fa-bounce">{nameArray[0]}</p>
+			<p className="letter2 fa-bounce">{nameArray[1]}</p>	
+			<p className="letter3 fa-bounce">{nameArray[2]}</p>
+			<p className="letter4 fa-bounce">{nameArray[3]}</p>
+			<p className="letter5 fa-bounce">{nameArray[4]}</p>
+			<p className="letter6 fa-bounce">{nameArray[5]}</p>
+			<p className="letter7 fa-bounce">{nameArray[6]}</p>
+			<p className="letter8 fa-bounce">{nameArray[7]}</p>
+			</h1>
+			<div className="extrainfo"><p>This is my webpage to show all of the ways I love learning.
+				From React to Python and TensorFlow to C++ to SQL injections, I always challenge myself to
+				learn and challenge myself to become more skilled. :)</p></div>
+			
         <Context.Provider value={{ GlobalState, SetGlobalState }}>
             <nav className="body">
                 <Helper />
@@ -27,6 +42,10 @@ const handleDelete = (e) => {
                     </li>
                 ))}</ul>
             </nav>
+			<div className="aboutNate">
+			<a className="kaggleShow fa-beat-fade" href="https://www.kaggle.com/"> <FontAwesomeIcon icon={faKaggle} color="#F06529" /></a>
+			<img className="pwn" src="https://static-cdn.jtvnw.net/jtv_user_pictures/3d016636-f037-46d8-bc63-c03ef320f1bb-profile_banner-480.png"/>
+			</div>
         </Context.Provider>
     </div>
     );
@@ -103,8 +122,8 @@ function Helper() {
 					<input placeholder="Enter your last name" id="last" type="text" value={FormState.lastname} onChange={(e) => handleLastChange(e)} />
 				</form>
 				<button className="addButton" value={uuidv4()} onClick={handleAddPerson}>ADD</button>
-				{<p>Name List!!!!</p>
-				}
+				<p className="ListTitle">Temporary Name List!</p>
+				
 			</nav>
 		</div>
 	);
