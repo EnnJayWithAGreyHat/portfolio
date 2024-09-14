@@ -1,6 +1,20 @@
 .portfolio{
 writing-mode: horizontal-tb;
-overflow: hidden;
+overflow-x: hidden;
+overflow-y: auto;
+scroll-behavior: smooth;
+.kaggleSection{
+  background:red;
+  position: absolute;
+  width: 95%;
+  left: 5%;
+  height: 100%;
+  top:100%;
+  //z-index:100;
+}
+&::-webkit-scrollbar { 
+  display:none;
+} 
 .extrainfo{
   //visibility: hidden;
   opacity: 0;
@@ -101,11 +115,27 @@ overflow: hidden;
       animation-delay: 1.7s;
     }
 }
-
-.kaggleShow{
-  position: absolute;
-  font-size: 3em;
+.aboutNate{
+  position:absolute;
   left:50%;
+  width:50%;
+  height: 100%;
+  .titleNate{
+    position: relative;
+    left:20%;
+  }
+  .pwn{
+    position: relative;
+    left:60%;
+    top: 6%;
+    width: 13em;
+    height: 10em;
+  }
+.kaggleShow{
+  position: relative;
+  font-size: 5em;
+  pointer-events: all;
+}
 }
 .fa-beat-fade{
     --fa-beat-fade-opacity: 0.1; 
@@ -143,9 +173,4 @@ overflow: hidden;
   clear: left;
   box-sizing: border-box;
   border-radius: 10px;
-}
-.pwn{
-  position: absolute;
-  left:50%;
-  top: 10%;
 }

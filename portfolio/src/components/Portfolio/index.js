@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { v4 as uuidv4 } from "uuid";
 import { React, createContext, useContext} from "react";
 import './index.scss';
@@ -7,6 +7,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 //import Datalist from "./Datalist";
 const Context = createContext(null);
 const Portfolio = () => {
+const sectionRef = useRef(null);
+//this took WAYYYY TOO LONG D:
+const scrollToSection = () => {
+	// Ensure the ref is not null and the current property is a DOM element
+	if (sectionRef.current) {
+	  sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+	}
+};
 const [GlobalState, SetGlobalState] = useState([]);
 const nameArray = ['L','e','a','r','n','i','n', 'g']
 useEffect(() => { console.log(GlobalState) }, [GlobalState])
@@ -43,15 +51,21 @@ const handleDelete = (e) => {
                 ))}</ul>
             </nav>
 			<div className="aboutNate">
-			<a className="kaggleShow fa-beat-fade" href="https://www.kaggle.com/"> <FontAwesomeIcon icon={faKaggle} color="#F06529" /></a>
+			<h1 className="titleNate">What am I up to?</h1>
+			<a className="kaggleShow fa-beat-fade" onClick={scrollToSection}> <FontAwesomeIcon icon={faKaggle} color="#F06529" /></a>
 			<img className="pwn" src="https://static-cdn.jtvnw.net/jtv_user_pictures/3d016636-f037-46d8-bc63-c03ef320f1bb-profile_banner-480.png"/>
 			</div>
         </Context.Provider>
+		<section className="kaggleSection" ref={sectionRef}></section>
+		<section id="pwned"></section>
     </div>
     );
 
 
 }
+	   
+
+
 function Helper() {
 	//console.log(inputkey)
 	//using the context from above to pass down access to that state
