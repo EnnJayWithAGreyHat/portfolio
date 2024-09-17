@@ -4,14 +4,47 @@ overflow-x: hidden;
 overflow-y: auto;
 scroll-behavior: smooth;
 .kaggleSection{
-  background:red;
+  background: linear-gradient(#323232, 15%, rgb(240, 101, 41));
   position: absolute;
   width: 95%;
   left: 5%;
   height: 100%;
-  top:100%;
-  //z-index:100;
+  top: 100%;
+  .sqlcert{
+    position: relative;
+    width: 30%;
+    height: 37.5%;
+  }
+  .pandascert{
+    position: relative;
+    width: 30%;
+    height: 37.5%;
+    left:40%;
+  }
 }
+.pwned{
+  background: linear-gradient(rgb(240, 101, 41), 20%, #54840c);
+  position: absolute;
+  width: 95%;
+  left: 5%;
+  height: 100%;
+  top: 200%;
+  .kaliorsomething{
+    position: inherit;
+    top: -1%;
+    width: 18%;
+    height: 22%;
+  }
+  .metabanner{
+    position: inherit;
+    top: -1%;
+    right:0%;
+
+    width: 20%;
+    height: 30%;
+  }
+}
+
 &::-webkit-scrollbar { 
   display:none;
 } 
@@ -123,18 +156,22 @@ scroll-behavior: smooth;
   .titleNate{
     position: relative;
     left:20%;
+    color:white;
   }
   .pwn{
     position: relative;
     left:60%;
-    top: 6%;
-    width: 13em;
-    height: 10em;
+    top: 5%;
+    width: 25.6%;
+    height: 19.2%;
+    cursor:pointer;
   }
 .kaggleShow{
   position: relative;
-  font-size: 5em;
-  pointer-events: all;
+  font-size: 6em;
+  &:hover{
+    cursor:pointer;
+  }
 }
 }
 .fa-beat-fade{
