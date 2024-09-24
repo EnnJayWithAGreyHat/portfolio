@@ -44,7 +44,14 @@ scroll-behavior: smooth;
     height: 30%;
   }
 }
-
+.codeProjects{
+  background: linear-gradient(#54840c, 50%, purple);
+  position: absolute;
+  width: 95%;
+  left: 5%;
+  height: 100%;
+  top: 300%;
+}
 &::-webkit-scrollbar { 
   display:none;
 } 
@@ -169,6 +176,16 @@ scroll-behavior: smooth;
 .kaggleShow{
   position: relative;
   font-size: 6em;
+  &:hover{
+    cursor:pointer;
+  }
+}
+.gitHubLogo{
+  position:relative;
+  top:30%;
+  right: 10%;
+  font-size: 6em;
+  color:grey;
   &:hover{
     cursor:pointer;
   }
