@@ -11,7 +11,7 @@ const ImageSlider = ({slides}) => {
     const slideStyler = {
         width: '100%',
         height: '100%',
-        borderRadius: '10px',
+        borderRadius: '0px',
         backgroundPosition: 'center',
         backgroundSize: "cover",
         backgroundImage: `url(${slides[currentIndex].url})`

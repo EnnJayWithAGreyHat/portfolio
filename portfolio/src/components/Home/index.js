@@ -4,10 +4,36 @@ import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 import ImageSlider from './slider'
+import image1 from './../../assets/images/IMG_1.JPG'
+import image2 from './../../assets/images/IMG_2.JPG'
+import image3 from './../../assets/images/IMG_3.PNG'
+import image4 from './../../assets/images/IMG_4.jpg'
+import image5 from './../../assets/images/IMG_5.jpg'
+import image6 from './../../assets/images/IMG_6.jpg'
+import image7 from './../../assets/images/IMG_7.jpg'
+import image8 from './../../assets/images/IMG_8.jpg'
+import image9 from './../../assets/images/IMG_9.jpg'
+import image10 from './../../assets/images/IMG_10.jpg'
+import image11 from './../../assets/images/IMG_11.jpg'
+import image12 from './../../assets/images/IMG_12.jpg'
+import image13 from './../../assets/images/IMG_13.PNG'
+import image14 from './../../assets/images/IMG_14.jpg'
 
 const Home = () => {
-  const slides = [{url:'https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/a8bf1a2c-259e-4e95-b2c2-bb995876ed63/a252bcd6-9a10-40be-bf99-1d850d2026e4.png', title:'something'},
-                  {url:'https://images.ctfassets.net/ub3bwfd53mwy/5WFv6lEUb1e6kWeP06CLXr/acd328417f24786af98b1750d90813de/4_Image.jpg?w=750', title:'something'},
+  const slides = [{url: image1, title: "image 1"},
+                  {url: image2, title: "image 1"},
+                  {url: image3, title: "image 1"},
+                  {url: image4, title: "image 1"},
+                  {url: image5, title: "image 1"},
+                  {url: image6, title: "image 1"},
+                  {url: image7, title: "image 1"},
+                  {url: image8, title: "image 1"},
+                  {url: image9, title: "image 1"},
+                  {url: image10, title: "image 1"},
+                  {url: image11, title: "image 1"},
+                  {url: image12, title: "image 1"},
+                  {url: image13, title: "image 1"},
+                  {url: image14, title: "image 1"},
                   ]
   const [letterClass, setLetterClass] = useState('text-animate')
   const nameArray = [' ','N','a', 't', 'h', 'a', 'n', ',',' ','a','n']
