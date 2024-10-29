@@ -48,7 +48,7 @@ const handleDelete = (e) => {
 			</h1>
 			<div className="extrainfo"><p>This is my webpage to show all of the ways I love learning.
 				From React to Python and TensorFlow to C++ to SQL injections, I always challenge myself to
-				learn and challenge myself to become more skilled. :)</p></div>
+				learn and to become more skilled. :)</p></div>
 			
         <Context.Provider value={{ GlobalState, SetGlobalState }}>
             <nav className="body">
