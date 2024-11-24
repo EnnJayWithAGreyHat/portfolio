@@ -18,7 +18,7 @@ import image11 from './../../assets/images/IMG_11.jpg'
 import image12 from './../../assets/images/IMG_12.jpg'
 import image13 from './../../assets/images/IMG_13.PNG'
 import image14 from './../../assets/images/IMG_14.jpg'
-
+import Google from './googlework'
 const Home = () => {
   const slides = [{url: image1, title: "image 1"},
                   {url: image2, title: "image 1"},
@@ -49,6 +49,7 @@ const Home = () => {
   return (
     <>
       <div className="container home-page">
+        <Google/>
         <div className='sliderFormatter'><ImageSlider slides={slides}/></div>
         <div className="text-zone">
           <h1>
