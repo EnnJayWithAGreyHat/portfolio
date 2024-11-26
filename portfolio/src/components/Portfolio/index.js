@@ -7,9 +7,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import kGif from '../../assets/images/kali.gif'
 import sqlCertK from '../../assets/images/Nathan Svoboda - Intro to SQL.png'
 import pandasCertK from '../../assets/images/Nathan Svoboda - Pandas.png'
+import GraphVisualization from "./visualization";
+import graph1 from "./graph-files/grid_weighted_directed.txt";
+import graph2 from "./graph-files/grid_unweighted_directed.txt";
+import graph3 from "./graph-files/grid_weighted_undirected.txt";
+import graph4 from "./graph-files/grid_unweighted_undirected.txt";
 //import Datalist from "./Datalist";
 const Context = createContext(null);
+
 const Portfolio = () => {
+
+const [selectedFile, setSelectedFile] = useState(graph1);
+const handleFileChange = (e) => {
+    setSelectedFile(e.target.value);
+  };
+
 const kaggleRef = useRef(null);
 const pwnedRef = useRef(null);
 const codeProjectsRef = useRef(null);
@@ -75,7 +87,19 @@ const handleDelete = (e) => {
 			<img className="metabanner" src="https://thenewhacker.wordpress.com/wp-content/uploads/2015/02/ninka.png"/>
 		</section>
 		<section className="codeProjects" ref={codeProjectsRef}>
-			
+		<div className="savage">
+      <h1>Graph Visualization</h1>
+      <div>
+        <label htmlFor="file-select">Select a graph file: </label>
+        <select id="file-select" onChange={handleFileChange} value={selectedFile}>
+          <option value={graph1}>Graph 1</option>
+          <option value={graph2}>Graph 2</option>
+          <option value={graph3}>Graph 3</option>
+          <option value={graph4}>Graph 4</option>
+        </select>
+      </div>
+      <GraphVisualization filePath={selectedFile} classname="savage" />
+    </div>
 		</section>
     </div>
     );

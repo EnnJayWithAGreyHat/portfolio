@@ -10,9 +10,6 @@ function App() {
     };
     return (
         <div>
-            <h2>React Google Login</h2>
-            <br />
-            <br />
             <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
         </div>
     )

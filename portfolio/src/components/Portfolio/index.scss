@@ -51,6 +51,10 @@ scroll-behavior: smooth;
   left: 5%;
   height: 100%;
   top: 300%;
+    .savage{
+      position: absolute;
+      left: 50%;
+    }
 }
 &::-webkit-scrollbar { 
   display:none;
