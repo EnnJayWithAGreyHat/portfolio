@@ -49,7 +49,7 @@ const Home = () => {
   return (
     <>
       <div className="container home-page">
-        <Google className="signIn"/>
+        <div className='signIn'><Google/></div>
         <div className='sliderFormatter'><ImageSlider slides={slides}/></div>
         <div className="text-zone">
           <h1>
