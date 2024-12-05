@@ -23,7 +23,7 @@ function App() {
         return () => window.removeEventListener('beforeunload', handleBeforeUnload);
     }, [startTime, userInfo]);
 
-    const responseMessage = async (response) => {
+    const responseMessage = (response) => {
         try {
             // Decode the Google JWT token to extract user info
             const decodedToken = jwtDecode(response.credential);
@@ -38,7 +38,7 @@ function App() {
             setUserInfo(userData);
 
             // Send user data to backend (MongoDB)
-            await fetch('http://localhost:5000/api/users', {
+            fetch('http://localhost:5000/api/users', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -89,13 +89,13 @@ function App() {
             <GoogleLogin
     onSuccess={(response) => {
         console.log('Login Success:', response);
+        responseMessage(response);
+        console.log("Got here, something needs to be modified I guess")
     }}
     onError={() => {
         console.error('Login Failed');
     }}
 />;
-            <button onClick={testBackend}>Test Backend</button>
-            {testMessage && <p>Test Message: {testMessage}</p>}
         </div>
     );
 }
