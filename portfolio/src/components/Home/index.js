@@ -19,7 +19,17 @@ import image12 from './../../assets/images/IMG_12.jpg'
 import image13 from './../../assets/images/IMG_13.PNG'
 import image14 from './../../assets/images/IMG_14.jpg'
 import Google from './googlework'
+import Resume from './../../assets/documents/Resume.pdf'
 const Home = () => {
+  const resumeButtonHandler = () => {
+    const pdfUrl = Resume; // Correctly referencing the imported PDF
+    const link = document.createElement("a"); 
+    link.href = pdfUrl;
+    link.download = "Nathan-Svoboda-Resume.pdf"; // Provide a filename for the download
+    document.body.appendChild(link); // Append the link to the document
+    link.click(); // Programmatically click the link
+    document.body.removeChild(link); // Remove the link after clicking
+  };
   const slides = [{url: image1, title: "image 1"},
                   {url: image2, title: "image 1"},
                   {url: image3, title: "image 1"},
@@ -38,7 +48,7 @@ const Home = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
   const nameArray = [' ','N','a', 't', 'h', 'a', 'n', ',',' ','a','n']
   const jobArray = ['A','S','U',' ','C','o','m','p','u','t','e','r', 
-   ' ','S','c','i','e','n','c','e',' ',' ',' ',' ','s','t','u','d','e','n','t',]
+   ' ','S','c','i','e','n','c','e',' ','s','t','u','d','e','n','t',]
 
   useEffect(() => {
     return () => {setTimeout(() => {
@@ -50,6 +60,10 @@ const Home = () => {
     <>
       <div className="container home-page">
         <div className='signIn'><Google/></div>
+        <div className='resume-container'>
+        <button className='resume-download-b' onClick={resumeButtonHandler}>Updated Resume!</button>
+
+        </div>
         <div className='sliderFormatter'><ImageSlider slides={slides}/></div>
         <div className="text-zone">
           <h1>

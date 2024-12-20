@@ -3,6 +3,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import {jwtDecode} from 'jwt-decode';
 
 function App() {
+    const [showLoginButton, setShowLoginButton] = useState(true);
     const [startTime, setStartTime] = useState(null);
     const [userInfo, setUserInfo] = useState(null);
     const [testMessage, setTestMessage] = useState('');
@@ -38,7 +39,7 @@ function App() {
             setUserInfo(userData);
 
             // Send user data to backend (MongoDB)
-            fetch('http://localhost:5000/api/users', {
+            fetch('https://ennjaywithagreyhat.github.io/portfolio/api/users', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -50,14 +51,10 @@ function App() {
         }
     };
 
-    const errorMessage = (error) => {
-        console.log('Login failed:', error);
-    };
-
     const sendTimeSpent = async (timeSpent) => {
         try {
             // Send time spent on site to backend
-            await fetch('http://localhost:5000/api/users/time', {
+            await fetch('https://ennjaywithagreyhat.github.io/portfolio/api/users/time', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -72,30 +69,33 @@ function App() {
         }
     };
 
-    const testBackend = async () => {
-        try {
-            const response = await fetch('http://localhost:5000/api/test');
-            const data = await response.json();
-            setTestMessage(data.message);
-        } catch (error) {
-            console.error('Error testing backend:', error);
-            setTestMessage('Failed to fetch test message');
-        }
-    };
-
     return (
         <div>
-            <h1>Welcome to the Website</h1>
+            <div className='disclaimer-container'>
+            {showLoginButton &&(
+                <p className="disclaimer" style={{ 
+                    fontFamily: "'Times New Roman', serif",
+                    position: "absolute",
+                    left: "200%",
+                    width: "1000%",
+                 }}>
+            By clicking "Sign in", you are consenting to your PUBLIC Google information being stored in my database.
+            If this is an issue and you would like your information removed, reach out to <u>njsvoboda04@gmail.com</u></p>
+            )}
+            </div>
+            {showLoginButton &&(
             <GoogleLogin
     onSuccess={(response) => {
         console.log('Login Success:', response);
         responseMessage(response);
-        console.log("Got here, something needs to be modified I guess")
+        setShowLoginButton(false);
+        console.log("Got here! Data passed to backend (very skibidi)");
     }}
     onError={() => {
         console.error('Login Failed');
     }}
-/>;
+/>
+)}
         </div>
     );
 }

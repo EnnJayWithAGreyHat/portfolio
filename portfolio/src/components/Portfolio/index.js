@@ -12,10 +12,23 @@ import graph1 from "./graph-files/grid_weighted_directed.txt";
 import graph2 from "./graph-files/grid_unweighted_directed.txt";
 import graph3 from "./graph-files/grid_weighted_undirected.txt";
 import graph4 from "./graph-files/grid_unweighted_undirected.txt";
-//import Datalist from "./Datalist";
-const Context = createContext(null);
+import Leaderboard from "./leaderboard";
 
+const Context = createContext(null);
 const Portfolio = () => {
+const [currentPage, setCurrentPage] = useState("home");
+
+const renderPage = () => {
+	switch (currentPage) {
+		case "timeLeaderboard":
+			return <Leaderboard type="time" />;
+		case "joinedLeaderboard":
+			return <Leaderboard type="joined" />;
+		default:
+			return <p>Welcome to the Portfolio!</p>;
+	}
+};
+
 
 const [selectedFile, setSelectedFile] = useState(graph1);
 const handleFileChange = (e) => {
@@ -48,6 +61,14 @@ const handleDelete = (e) => {
 
     return (
         <div className="container portfolio">
+			<div className="leaderboard-container">
+				<nav>
+				<button onClick={() => setCurrentPage("home")}>Home</button>
+                <button onClick={() => setCurrentPage("timeLeaderboard")}>Time Leaderboard</button>
+                <button onClick={() => setCurrentPage("joinedLeaderboard")}>Joined Leaderboard</button>
+				</nav>
+				{renderPage()}
+			</div>
 		<h1 className="title1">
 			<p className="letter1 fa-bounce">{nameArray[0]}</p>
 			<p className="letter2 fa-bounce">{nameArray[1]}</p>	
@@ -87,7 +108,7 @@ const handleDelete = (e) => {
 			<img className="metabanner" src="https://thenewhacker.wordpress.com/wp-content/uploads/2015/02/ninka.png"/>
 		</section>
 		<section className="codeProjects" ref={codeProjectsRef}>
-		<div className="savage">
+	<div className="savage">
       <h1>Graph Visualization</h1>
       <div>
         <label htmlFor="file-select">Select a graph file: </label>

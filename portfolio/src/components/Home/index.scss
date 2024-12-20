@@ -1,5 +1,42 @@
 .home-page {
+  .disclaimer-container{
+    position: absolute;
+    left: 65%;
+    width:25%;
+    .disclaimer{
+      position: inherit;
+      color: red;
+      font-size: 20px;
+  }
 
+  }
+  .resume-container{
+    position:absolute;
+    left:10%;
+    top: 80%;
+    .resume-download-b{
+      transition-duration: 0.4s;
+      color: white;
+      background-color: transparent;
+      font-size: 13px;
+      font-weight: 400;
+      font-family: sans-serif;
+      text-decoration: none;
+      padding: 10px 18px;
+      border: 1px solid black;
+      margin-top: 25px;
+      float: left;
+      animation: fadeInAnimation 1s 1.8s backwards;
+      white-space: nowrap;
+  
+      &:hover {
+        background: rgb(161, 161, 161);
+        color: black;
+        border: transparent;
+        cursor:default;
+      }
+    }
+  }
   .sliderFormatter{
     width:500px;
     height:500px;
@@ -11,6 +48,7 @@
     .signIn{
       position: absolute;
       left: 50%;
+      top: 3%;
     }
     .text-zone {
       position: absolute;
@@ -73,6 +111,7 @@
     }
   
     .flat-button {
+      transition-duration: 0.4s;
       color: #ffd700;
       font-size: 13px;
       font-weight: 400;

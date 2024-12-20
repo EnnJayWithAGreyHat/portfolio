@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 
-const GraphVisualization = ({ filePath }) => {
+const GraphVisualization = ({ filePath, highlightedPath = [] }) => {
   const svgRef = useRef(null);
   const [graphData, setGraphData] = useState(null);
 
@@ -61,8 +61,14 @@ const GraphVisualization = ({ filePath }) => {
       .attr("y1", (d) => nodes[d.source].y)
       .attr("x2", (d) => nodes[d.target].x)
       .attr("y2", (d) => nodes[d.target].y)
-      .attr("stroke", "white") // Updated stroke color to white
-      .attr("stroke-width", 1); // Set thin lines
+      .attr("stroke", (d) =>
+        highlightedPath.some(
+          (path) => path.source === d.source && path.target === d.target
+        )
+          ? "green"
+          : "white"
+      ) // Highlight specific links in green
+      .attr("stroke-width", 2);
 
     // Render nodes
     svg
@@ -73,7 +79,7 @@ const GraphVisualization = ({ filePath }) => {
       .attr("cy", (d) => d.y)
       .attr("r", 2)
       .attr("fill", "black");
-  }, [graphData]);
+  }, [graphData, highlightedPath]);
 
   return <svg ref={svgRef} style={{ border: "1px solid black" }} />;
 };
