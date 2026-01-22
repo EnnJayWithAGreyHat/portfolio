@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.c1667f93.css",
-    "main.js": "/portfolio/static/js/main.40d703fc.js",
+    "main.css": "/portfolio/static/css/main.48568da7.css",
+    "main.js": "/portfolio/static/js/main.af4cf8f1.js",
     "static/js/453.32bc8d24.chunk.js": "/portfolio/static/js/453.32bc8d24.chunk.js",
     "static/media/IMG_3.PNG": "/portfolio/static/media/IMG_3.faff3f9a7ecf2623d53f.PNG",
     "static/media/IMG_13.PNG": "/portfolio/static/media/IMG_13.3d7b565bb22cc516fc5a.PNG",
@@ -18,9 +18,17 @@
     "static/media/Nathan Svoboda - Intro to SQL.png": "/portfolio/static/media/Nathan Svoboda - Intro to SQL.741a7f8fdad9ab9a2f1e.png",
     "static/media/Nathan Svoboda - Pandas.png": "/portfolio/static/media/Nathan Svoboda - Pandas.d4ae3c772b2a66e59d08.png",
     "static/media/IMG_1.JPG": "/portfolio/static/media/IMG_1.74087229d14829a2dcce.JPG",
-    "static/media/kali.gif": "/portfolio/static/media/kali.d84dc6987516e1118bec.gif",
-    "static/media/Resume.pdf": "/portfolio/static/media/Resume.d2b2696ce7197d69612e.pdf",
+    "static/media/Orange5.png": "/portfolio/static/media/Orange5.1da31d729dd9c41db844.png",
+    "static/media/Orange2.png": "/portfolio/static/media/Orange2.fa5ecf22c5d99dd596d7.png",
+    "static/media/Orange7.png": "/portfolio/static/media/Orange7.cb52db59f148b4eadaa0.png",
+    "static/media/Orange1.png": "/portfolio/static/media/Orange1.a49a8a2b9283dfb5305e.png",
+    "static/media/Orange6.png": "/portfolio/static/media/Orange6.ae1e87404ba7213890e8.png",
+    "static/media/Nathan_Svoboda_Resume.pdf": "/portfolio/static/media/Nathan_Svoboda_Resume.631e7a48b63130589ef0.pdf",
+    "static/media/FULLSCREEN.png": "/portfolio/static/media/FULLSCREEN.c2c7b6285d74ef95f204.png",
+    "static/media/Orange4.png": "/portfolio/static/media/Orange4.b588d67989a5c1af1b8c.png",
     "static/media/IMG_11.jpg": "/portfolio/static/media/IMG_11.82f3f6fcb7e72f2073f7.jpg",
+    "static/media/Orange3.png": "/portfolio/static/media/Orange3.dcc4fd5147f8aa8c2323.png",
+    "static/media/ORANGE-BELT.png": "/portfolio/static/media/ORANGE-BELT.dd02528f49e2c8febf14.png",
     "static/media/helvetica-neu.ttf": "/portfolio/static/media/helvetica-neu.8a19678078a6b21c8057.ttf",
     "static/media/LaBelleAurore.woff": "/portfolio/static/media/LaBelleAurore.9c5433c64baa43d1d274.woff",
     "static/media/LaBelleAurore.woff2": "/portfolio/static/media/LaBelleAurore.a83c1c58fd7e43972e4a.woff2",
@@ -31,12 +39,12 @@
     "static/media/grid_unweighted_directed.txt": "/portfolio/static/media/grid_unweighted_directed.13ffde070b04567028af.txt",
     "static/media/grid_unweighted_undirected.txt": "/portfolio/static/media/grid_unweighted_undirected.39e62e7fd30fb04f1dac.txt",
     "index.html": "/portfolio/index.html",
-    "main.c1667f93.css.map": "/portfolio/static/css/main.c1667f93.css.map",
-    "main.40d703fc.js.map": "/portfolio/static/js/main.40d703fc.js.map",
+    "main.48568da7.css.map": "/portfolio/static/css/main.48568da7.css.map",
+    "main.af4cf8f1.js.map": "/portfolio/static/js/main.af4cf8f1.js.map",
     "453.32bc8d24.chunk.js.map": "/portfolio/static/js/453.32bc8d24.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c1667f93.css",
-    "static/js/main.40d703fc.js"
+    "static/css/main.48568da7.css",
+    "static/js/main.af4cf8f1.js"
   ]
 }
