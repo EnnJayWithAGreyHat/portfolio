@@ -1,25 +1,45 @@
 html {
-  font-size: 62.5%;
+  font-size: clamp(14px, 0.9vw, 18px);
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font: 300 11px/1.4 'Helvetica Neue', sans-serif;
-  color: #444;
+  min-height: 100%;
+  font-family: 'Helvetica Neue', sans-serif;
+  background: #101417;
+  color: #e6edf3;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #323232;
-  overflow: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#root::-webkit-scrollbar,
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
   display: block;
-}
-
-.dashboard {
-  margin-top: 200px;
-  margin-left: 200px;
-}
-
-@media screen and (max-width: 1200px) {
-  body {
-    overflow: visible;
-  }
 }

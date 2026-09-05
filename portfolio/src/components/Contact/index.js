@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Loader from 'react-loaders'
 import { useRef } from 'react'
 import emailjs from '@emailjs/browser'
-import AnimatedLetters from '../AnimatedLetters'
+// import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 
 const Contact = () => {
@@ -10,10 +10,12 @@ const Contact = () => {
   const form = useRef()
 
   useEffect(() => {
-    return () => {setTimeout(() => {
+    const timeout = setTimeout(() => {
       setLetterClass('text-animate-hover')
     }, 3000)
-}}, [])
+
+    return () => clearTimeout(timeout)
+  }, [])
 
   const sendEmail = (e) => {
     e.preventDefault()
@@ -38,15 +40,15 @@ const Contact = () => {
       <div className="container contact-page">
         <div className="text-zone">
           <h1>
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={['C', 'o', 'n', 't', 'a', 'c', 't', ' ', 'm', 'e']}
-              idx={15}
-            />
+            <span className={letterClass}>Contact</span>{' '}
+            <span className={`${letterClass} _12`}>Me</span>
           </h1>
           <p>
-            I am always willing to start a conversation! Feel free to reach out through my LinkedIn or send me a personal email that would not
-            get lost through the feed of job updates and school notifications! (This service utilizes EmailJS to send me a free email on your behalf!)
+            I am always willing to start a conversation. Please feel free to reach out through my LinkedIn or send me a personal email that would not
+            get lost through the feed of job updates and school notifications!
+          </p>
+          <p>
+            Powered by EmailJS
           </p>
           <div className="contact-form">
             <form ref={form} onSubmit={sendEmail}>

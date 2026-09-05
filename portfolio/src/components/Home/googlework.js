@@ -71,18 +71,6 @@ function App() {
 
     return (
         <div>
-            <div className='disclaimer-container'>
-            {showLoginButton &&(
-                <p className="disclaimer" style={{ 
-                    fontFamily: "'Times New Roman', serif",
-                    position: "absolute",
-                    left: "200%",
-                    width: "1000%",
-                 }}>
-            By clicking "Sign in", you are consenting to your PUBLIC Google information being stored in my database.
-            If this is an issue and you would like your information removed, reach out to <u>njsvoboda04@gmail.com</u></p>
-            )}
-            </div>
             {showLoginButton &&(
             <GoogleLogin
     onSuccess={(response) => {

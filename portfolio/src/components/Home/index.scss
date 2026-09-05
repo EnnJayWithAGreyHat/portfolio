@@ -1,159 +1,129 @@
+:root {
+  --slider-width: clamp(280px, 42vw, 500px);
+  --slider-height: clamp(220px, 34vw, 390px);
+}
+
 .home-page {
-  .disclaimer-container{
-    position: absolute;
-    left: 65%;
-    width:25%;
-    .disclaimer{
-      position: inherit;
-      color: red;
-      font-size: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, var(--slider-width));
+  grid-template-rows: auto 1fr auto auto;
+  grid-template-areas:
+    'signin slider'
+    'text slider'
+    'resume slider'
+    'socials slider';
+  align-items: center;
+  gap: clamp(0.8rem, 2vw, 1.4rem);
+  min-height: calc(100vh - (var(--page-padding-y) * 2));
+}
+
+.home-page .signIn {
+  grid-area: signin;
+}
+
+.home-page .signin-disclaimer {
+  margin: 0 0 0.55rem 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+  max-width: 62ch;
+}
+
+.home-page .text-zone {
+  grid-area: text;
+}
+
+.home-page .resume-container {
+  grid-area: resume;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.home-page .socials-hint {
+  grid-area: socials;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--brand);
+  font-family: 'Coolvetica', sans-serif;
+  font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+  letter-spacing: 0.04em;
+  align-self: end;
+}
+
+.home-page .socials-arrow {
+  width: 1.2em;
+  height: 1.2em;
+  border-left: 2px solid var(--brand);
+  border-bottom: 2px solid var(--brand);
+  transform: rotate(45deg);
+}
+
+.home-page .sliderFormatter {
+  grid-area: slider;
+  width: 100%;
+  height: var(--slider-height);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--surface-border);
+  background: #0f1419;
+}
+
+.home-page .sliderFormatter img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.home-page h1 {
+  color: var(--brand);
+  font-family: 'Coolvetica', sans-serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  line-height: 1.06;
+  margin: 0;
+}
+
+.home-page h2 {
+  margin: 0.9rem 0 0 0;
+  color: var(--text-muted);
+  font-size: clamp(0.8rem, 1.4vw, 1rem);
+  letter-spacing: 0.08em;
+}
+
+.home-page .flat-button,
+.home-page .resume-download-b {
+  margin-top: 1rem;
+  padding: 0.6rem 0.95rem;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid #ffd166;
+  color: #ffd166;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.home-page .flat-button:hover,
+.home-page .resume-download-b:hover {
+  background: #ffd166;
+  color: #2a2112;
+}
+
+@media (max-width: 1050px) {
+  .home-page {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'signin'
+      'text'
+      'slider'
+      'resume'
+      'socials';
+    min-height: auto;
   }
 
+  .home-page .sliderFormatter {
+    max-width: 680px;
   }
-  .resume-container{
-    position:absolute;
-    left:10%;
-    top: 80%;
-    .resume-download-b{
-      transition-duration: 0.4s;
-      color: white;
-      background-color: transparent;
-      font-size: 13px;
-      font-weight: 400;
-      font-family: sans-serif;
-      text-decoration: none;
-      padding: 10px 18px;
-      border: 1px solid black;
-      margin-top: 25px;
-      float: left;
-      animation: fadeInAnimation 1s 1.8s backwards;
-      white-space: nowrap;
-  
-      &:hover {
-        background: rgb(161, 161, 161);
-        color: black;
-        border: transparent;
-        cursor:default;
-      }
-    }
-  }
-  .sliderFormatter{
-    width:500px;
-    height:500px;
-    margin: 0 auto;
-    position: absolute;
-    top: 22%;
-    right: 12%;
-  }
-    .signIn{
-      position: absolute;
-      left: 50%;
-      top: 3%;
-    }
-    .text-zone {
-      position: absolute;
-      left: 10%;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40%;
-      max-height: 90%;
-    }
-    h1 {
-      color: #8C1D40;
-      user-select: none;
-      font-size: 56px;
-      line-height: 53px;
-      margin: 0;
-      font-family: 'Coolvetica';
-      font-weight: 400;
-  
-      &:before {
-        content: '<h1>';
-        font-family: 'La Belle Aurore', cursive;
-        color: #8C1D40;
-        font-size: 18px;
-        position: absolute;
-        margin-top: -40px;
-        left: -15px;
-        opacity: 0.6;
-      }
-  
-      &:after {
-        content: '<h1/>';
-        font-family: 'La Belle Aurore', cursive;
-        color: #8C1D40;
-        font-size: 18px;
-        position: absolute;
-        margin-top: 18px;
-        margin-left: 50px;
-        animation: fadeIn 1s 1.7s backwards;
-        opacity: 0.6;
-      }
-  
-      img {
-        margin-left: 20px;
-        opacity: 0;
-        width: 32px;
-        height: auto;
-        animation: rotateIn 1s linear both;
-        animation-delay: 1.4s;
-      }
-    }
-  
-    h2 {
-      color: #8d8d8d;
-      margin-top: 20px;
-      font-weight: 400;
-      font-size: 11px;
-      font-family: sans-serif;
-      letter-spacing: 3px;
-      animation: fadeIn 1s 1.8s backwards;
-    }
-  
-    .flat-button {
-      transition-duration: 0.4s;
-      color: #ffd700;
-      font-size: 13px;
-      font-weight: 400;
-      letter-spacing: 4px;
-      font-family: sans-serif;
-      text-decoration: none;
-      padding: 10px 18px;
-      border: 1px solid #ffd700;
-      margin-top: 25px;
-      float: left;
-      animation: fadeInAnimation 1s 1.8s backwards;
-      white-space: nowrap;
-  
-      &:hover {
-        background: #ffd700;
-        color: #333;
-        cursor:default;
-      }
-    }
-  }
-  
-  
-  
-  @media screen and (max-width: 1200px) {
-    .tags,
-    .home-page h1:before,
-    .home-page h1:after {
-      display: none;
-    }
-  
-    .home-page .text-zone {
-      position: initial;
-      width: 100%;
-      transform: none;
-      padding: 10px;
-      box-sizing: border-box;
-    }
-  
-    .home-page .flat-button {
-      float: none;
-      display: block;
-      margin: 20px auto 0 auto;
-      width: 200px;
-    }
-  }
+}

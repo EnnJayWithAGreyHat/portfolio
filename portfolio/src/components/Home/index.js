@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Loader from 'react-loaders'
-import AnimatedLetters from '../AnimatedLetters'
 import './index.scss'
 import ImageSlider from './slider'
 import image1 from './../../assets/images/IMG_3.PNG'
@@ -19,72 +18,87 @@ import image12 from './../../assets/images/IMG_12.jpg'
 import image13 from './../../assets/images/IMG_13.PNG'
 import image14 from './../../assets/images/IMG_14.jpg'
 import Google from './googlework'
-import Resume from './../../assets/documents/Resume.pdf'
+import ResumeCyber from './../../assets/documents/Nathan_Svoboda_Resume_Cybersecurity.pdf'
+import ResumeSoft from './../../assets/documents/Nathan_Svoboda_Resume_Software.pdf'
 const Home = () => {
-  const resumeButtonHandler = () => {
-    const pdfUrl = Resume; // Correctly referencing the imported PDF
-    const link = document.createElement("a"); 
+  const resumeButtonHandler = (pdfUrl, filename) => {
+    const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = "Nathan-Svoboda-Resume.pdf"; // Provide a filename for the download
+    link.download = filename;
     document.body.appendChild(link); // Append the link to the document
     link.click(); // Programmatically click the link
     document.body.removeChild(link); // Remove the link after clicking
   };
-  const slides = [{url: image1, title: "image 1"},
-                  {url: image2, title: "image 1"},
-                  {url: image3, title: "image 1"},
-                  {url: image4, title: "image 1"},
-                  {url: image5, title: "image 1"},
-                  {url: image6, title: "image 1"},
-                  {url: image7, title: "image 1"},
-                  {url: image8, title: "image 1"},
-                  {url: image9, title: "image 1"},
-                  {url: image10, title: "image 1"},
-                  {url: image11, title: "image 1"},
-                  {url: image12, title: "image 1"},
-                  {url: image13, title: "image 1"},
-                  {url: image14, title: "image 1"},
-                  ]
+  const slides = [{ url: image1, title: "image 1" },
+  { url: image2, title: "image 1" },
+  { url: image3, title: "image 1" },
+  { url: image4, title: "image 1" },
+  { url: image5, title: "image 1" },
+  { url: image6, title: "image 1" },
+  { url: image7, title: "image 1" },
+  { url: image8, title: "image 1" },
+  { url: image9, title: "image 1" },
+  { url: image10, title: "image 1" },
+  { url: image11, title: "image 1" },
+  { url: image12, title: "image 1" },
+  { url: image13, title: "image 1" },
+  { url: image14, title: "image 1" },
+  ]
   const [letterClass, setLetterClass] = useState('text-animate')
-  const nameArray = [' ','N','a', 't', 'h', 'a', 'n', ',',' ','a','n']
-  const jobArray = ['A','S','U',' ','C','o','m','p','u','t','e','r', 
-   ' ','S','c','i','e','n','c','e',' ','s','t','u','d','e','n','t',]
 
   useEffect(() => {
-    return () => {setTimeout(() => {
-      setLetterClass('text-animate-hover')
-    }, 7000)
-}}, [])
+    return () => {
+      setTimeout(() => {
+        setLetterClass('text-animate-hover')
+      }, 7000)
+    }
+  }, [])
 
   return (
     <>
       <div className="container home-page">
-        <div className='signIn'><Google/></div>
-        <div className='resume-container'>
-        <button className='resume-download-b' onClick={resumeButtonHandler}>Updated Resume!</button>
-
+        <div className='signIn'>
+          <p className="signin-disclaimer">
+            Google sign-in works, but storing the user session token is blocked
+            on GitHub Pages by unavoidable CORS policy restrictions.
+          </p>
+          <Google />
         </div>
-        <div className='sliderFormatter'><ImageSlider slides={slides}/></div>
+        <div className='resume-container'>
+          <button
+            className='resume-download-b'
+            onClick={() => resumeButtonHandler(ResumeCyber, 'Nathan-Svoboda-Resume-Cybersecurity.pdf')}
+          >
+            Resume - Cybersecurity
+          </button>
+          <button
+            className='resume-download-b'
+            onClick={() => resumeButtonHandler(ResumeSoft, 'Nathan-Svoboda-Resume-Software.pdf')}
+          >
+            Resume - Software
+          </button>
+        </div>
+        <div className="socials-hint">
+          <span className="socials-arrow" aria-hidden="true" />
+          <span className="socials-text">check out my socials!</span>
+        </div>
+        <div className='sliderFormatter'><ImageSlider slides={slides} /></div>
         <div className="text-zone">
           <h1>
             <span className={letterClass}>Hello</span>
-            <span className={`${letterClass} _12`}>,</span>
-            <br />
+            <span className={`${letterClass} _12`}>,</span>{' '}
             <span className={`${letterClass} _13`}>I</span>
-            <span className={`${letterClass} _14`}>'m</span>
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={nameArray}
-              idx={16}
-            />
-            <br />
-            <AnimatedLetters
-              letterClass={letterClass}
-              strArray={jobArray}
-              idx={22}
-            />
+            <span className={`${letterClass} _14`}>'</span>
+            <span className={`${letterClass} _14`}>m</span>{' '}
+            <span className={`${letterClass} _14`}>Nathan</span>{' '}
+            <span className={`${letterClass} _15`}>an</span>{' '}
+            <span className={`${letterClass} _16`}>ASU</span>{' '}
+            <span className={`${letterClass} _17`}>Computer</span>{' '}
+            <span className={`${letterClass} _18`}>Science</span>{' '}
+            <span className={`${letterClass} _19`}>Graduate</span>
           </h1>
-          <h2>Front End Developer | Backend Developer | Hacker</h2>
+
+          <h2>Hacker | Front-End Developer | Back-End Developer</h2>
           <Link to="/contact" className="flat-button">
             CONTACT ME
           </Link>

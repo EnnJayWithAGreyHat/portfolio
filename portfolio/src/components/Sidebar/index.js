@@ -1,57 +1,52 @@
 import './index.scss'
-import { useState } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faLinkedin,
   faGithub,
+  faRaspberryPi
 } from '@fortawesome/free-brands-svg-icons'
 import {
   faHome,
   faUser,
   faEnvelope,
-  faSuitcase,
+  faSuitcase
 } from '@fortawesome/free-solid-svg-icons'
 import { NavLink } from 'react-router-dom'
 
 const Sidebar = () => {
-  const [showNav, setShowNav] = useState(false);
-
   return (
     <div className="nav-bar">
-      {/* Put link here maybe */}
-      <nav className={showNav ? 'mobile-show' : ''}>
-        <NavLink 
-          exact="true"
-          activeclassname="active"
+      <div className="logo">
+      </div>
+
+      <nav>
+        <NavLink
           to="/home"
-          onClick={() => setShowNav(false)}>
-          <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
+          className={({ isActive }) => (isActive ? 'active' : undefined)}
+        >
+          <FontAwesomeIcon icon={faHome} />
         </NavLink>
-        <NavLink 
-          activeclassname="active"
-          className="about-link"
+        <NavLink
           to="/about"
-          onClick={() => setShowNav(false)}>
-          <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
+          className={({ isActive }) => (isActive ? 'active' : undefined)}
+        >
+          <FontAwesomeIcon icon={faUser} />
         </NavLink>
         <NavLink
-          activeclassname="active"
-          className="portfolio-link"
           to="/portfolio"
-          onClick={() => setShowNav(false)}
+          className={({ isActive }) => (isActive ? 'active' : undefined)}
         >
-          <FontAwesomeIcon icon={faSuitcase} color="#4d4d4e" />
+          <FontAwesomeIcon icon={faSuitcase} />
         </NavLink>
         <NavLink
-          activeclassname="active"
-          className="contact-link"
           to="/contact"
-          onClick={() => setShowNav(false)}
+          className={({ isActive }) => (isActive ? 'active' : undefined)}
         >
-          <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
+          <FontAwesomeIcon icon={faEnvelope} />
         </NavLink>
       </nav>
+
       <ul>
         <li>
           <a
@@ -61,7 +56,6 @@ const Sidebar = () => {
           >
             <FontAwesomeIcon
               icon={faLinkedin}
-              color="#4d4d4e"
               className="anchor-icon"
             />
           </a>
@@ -74,12 +68,23 @@ const Sidebar = () => {
           >
             <FontAwesomeIcon
               icon={faGithub}
-              color="#4d4d4e"
               className="anchor-icon"
             />
           </a>
         </li>
-      </ul> 
+        <li>
+          <a
+            href="https://pwn.college/hacker/64420"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon
+              icon={faRaspberryPi}
+              className="anchor-icon"
+            />
+          </a>
+        </li>
+      </ul>
     </div>
   )
 }

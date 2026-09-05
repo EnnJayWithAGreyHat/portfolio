@@ -3,7 +3,7 @@
 //Purpose: Learning React through practice and developing based on a tutorial on scrimba
 import { Route, Routes} from 'react-router-dom'
 import Home from './components/Home'
-import About from './components/About'
+import About, { MilestoneArticle } from './components/About'
 import Contact from './components/Contact'
 import Layout from './components/Layout'
 import './App.scss'
@@ -32,6 +32,7 @@ function App() {
         <Route path='portfolio' index element={<Portfolio />} />
           <Route path='home' index element={<Home />} />
           <Route path="about" element={<About />} />
+          <Route path="about/:milestoneSlug" element={<MilestoneArticle />} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>

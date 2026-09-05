@@ -31,6 +31,24 @@ textarea {
   font-family: 'Helvetica Neue', sans-serif;
 }
 
+:root {
+  --sidebar-width: clamp(56px, 7vw, 92px);
+  --page-padding-x: clamp(1rem, 2.5vw, 2.25rem);
+  --page-padding-y: clamp(1.25rem, 3vw, 2.75rem);
+  --content-max-width: 1200px;
+  --surface-1: #141a1f;
+  --surface-2: #1d252d;
+  --surface-border: rgba(255, 255, 255, 0.14);
+  --text-strong: #f3f6fa;
+  --text-muted: rgba(230, 237, 243, 0.78);
+  --brand: #8c1d40;
+  --brand-alt: #f06529;
+}
+
+a {
+  color: inherit;
+}
+
 .loader-hidden {
   display: none;
 }
