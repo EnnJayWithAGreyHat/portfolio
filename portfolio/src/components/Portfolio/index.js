@@ -163,11 +163,11 @@ const Portfolio = () => {
         <div className='section-content'>
           <div className='section-header'>
             <h2>Professional Experience</h2>
-            <p className='section-summary'>This is the section that explains my previous work experience.</p>
+            <p className='section-summary'>Previous professional work experience.</p>
           </div>
           <div className="section-grid">
             <div className="section-card">
-              <img className="experience-image" src={HES} alt="Hawkeye Energy Solutions" />
+              <a href="https://hawkeye-es.com/" target='_blank'><img className="experience-image" src={HES} alt="Hawkeye Energy Solutions 11"/></a>
               <div className="experience-body">
                 <p>
                   At Hawkeye Energy Solutions (a United Engineering partner), I spent the summers of 2024 and 2025
@@ -211,7 +211,7 @@ const Portfolio = () => {
               </div>
             </div>
             <div className='section-card'>
-              <img className="experience-image" src={Para} alt="Paragon project" />
+              <a href='https://www.linkedin.com/company/paragon-autonomous'><img className="experience-image" src={Para} alt="Paragon project" /></a>
               <div className="experience-body">
                 <p>
                   Through an Arizona State University collaboration, I joined a software team building a drone
